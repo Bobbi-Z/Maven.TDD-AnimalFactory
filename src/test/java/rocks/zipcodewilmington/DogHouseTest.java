@@ -35,6 +35,7 @@ public class DogHouseTest {
         String name = "Milo";
         Date birthDate = new Date();
         Dog animal = AnimalFactory.createDog(name, birthDate);
+        DogHouse.clear();
         DogHouse.add(animal);
 
         Integer expectedDog = 1;
@@ -50,12 +51,15 @@ public class DogHouseTest {
         Integer expectedID = 1200;
 
         Dog expectedDog = new Dog(expectedName, expectedDate, expectedID);
+
         DogHouse dogHouse = new DogHouse();
+        DogHouse.clear();
         dogHouse.add(expectedDog);
 
         dogHouse.remove(1200);
 
         Assert.assertTrue(0 == dogHouse.getNumberOfDogs());
+
     }
         // TODO - Create tests for `void remove(Dog dog)`
         @Test
@@ -66,11 +70,13 @@ public class DogHouseTest {
 
             Dog expectedDog = new Dog(expectedName, expectedDate, expectedID);
             DogHouse dogHouse = new DogHouse();
+            DogHouse.clear();
             dogHouse.add(expectedDog);
 
             dogHouse.remove(expectedDog);
 
             Assert.assertTrue(0 == dogHouse.getNumberOfDogs());
+
         }
         // TODO - Create tests for `Dog getDogById(Integer id)`
         @Test
@@ -81,11 +87,13 @@ public class DogHouseTest {
 
             Dog expectedDog = new Dog(expectedName, expectedDate, expectedID);
             DogHouse dogHouse = new DogHouse();
+            DogHouse.clear();
             DogHouse.add(expectedDog);
 
             Dog actual = DogHouse.getDogById(1200);
 
             Assert.assertEquals(expectedDog, actual);
+            DogHouse.clear();
         }
 
     }

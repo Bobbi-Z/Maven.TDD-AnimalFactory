@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.animal_storage.CatHouse;
+import rocks.zipcodewilmington.animals.animal_storage.DogHouse;
 
 import java.util.Date;
 
@@ -20,7 +21,7 @@ public class CatHouseTest {
 
         Cat expectedCat = new Cat(expectedName, expectedDate, expectedID);
         CatHouse catHouse = new CatHouse();
-
+        CatHouse.clear();
      catHouse.add(expectedCat);
 
         Assert.assertTrue(1 == catHouse.getNumberOfCats());
@@ -35,6 +36,7 @@ public class CatHouseTest {
 
         Cat expectedCat = new Cat(expectedName, expectedDate, expectedID);
         CatHouse catHouse = new CatHouse();
+        CatHouse.clear();
             catHouse.add(expectedCat);
             catHouse.remove(expectedCat);
 
@@ -49,6 +51,7 @@ public class CatHouseTest {
 
         Cat expectedCat = new Cat(expectedName, expectedDate, expectedID);
         CatHouse catHouse = new CatHouse();
+        CatHouse.clear();
         catHouse.add(expectedCat);
 
         catHouse.remove(1200);
@@ -65,6 +68,7 @@ public class CatHouseTest {
 
         Cat expectedCat = new Cat(expectedName, expectedDate, expectedID);
         CatHouse catHouse = new CatHouse();
+        CatHouse.clear();
         catHouse.add(expectedCat);
 
         Cat actual = catHouse.getCatById(1200);
@@ -80,6 +84,7 @@ public class CatHouseTest {
 
         Cat expectedCat = new Cat(expectedName, expectedDate, expectedID);
         CatHouse catHouse = new CatHouse();
+        CatHouse.clear();
         catHouse.add(expectedCat);
 
         Integer expected = 1;
