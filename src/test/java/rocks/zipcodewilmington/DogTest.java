@@ -2,13 +2,15 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.Dog;
+
+import java.util.Date;
 
 /**
  * @author leon on 4/19/18.
  */
 public class DogTest {
-    // TODO - Create tests for `new Dog(String name, Date birthDate, Integer id)`
     // TODO - Create tests for `speak`
     // TODO - Create tests for `setBirthDate(Date birthDate)`
     // TODO - Create tests for `void eat(Food food)`
@@ -28,4 +30,36 @@ public class DogTest {
         String dogName = dog.getName();
         Assert.assertEquals(dogName, givenName);
     }
+    // TODO - Create tests for `new Dog(String name, Date birthDate, Integer id)`
+    @Test
+    public void constructorTest() {
+        String givenName = "Spot";
+        Date givenBirthDate = new Date();
+        Integer givenId = 0;
+
+        Dog dog = new Dog(givenName, givenBirthDate, givenId);
+
+        String retrievedName = dog.getName();
+        Date retrievedBirthDate = dog.getBirthDate();
+        Integer retrievedId = dog.getId();
+
+        Assert.assertEquals(givenName, retrievedName);
+        Assert.assertEquals(givenBirthDate, retrievedBirthDate);
+        Assert.assertEquals(givenId, retrievedId);
+    }
+
+    @Test
+    public void testDogSpeak(){
+        String givenName = "Spot";
+        Date givenBirthDate = new Date();
+        Integer givenId = 0;
+
+        Dog dog = new Dog(givenName, givenBirthDate, givenId);
+
+        String expectedSpeak = "bark!";
+        String actualSpeak = dog.speak();
+
+        Assert.assertEquals(expectedSpeak, actualSpeak);
+    }
+
 }
